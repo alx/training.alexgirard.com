@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if and .Title (ne .Kind "home") }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
+    <meta name="keywords" content="{{ delimit (.Params.tags | default .Site.Params.keywords) ", " }}">
+    <meta name="author" content="{{ .Site.Params.author.name }}">
+    {{ if .Params.robots }}<meta name="robots" content="{{ .Params.robots }}">{{ end }}
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title | default .Site.Title }}">
+    <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:image" content="{{ (.Params.image | default .Site.Params.image) | absURL }}">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
+    <meta name="twitter:description" content="{{ .Params.description | default .Site.Params.description }}">
+    <meta name="twitter:image" content="{{ (.Params.image | default .Site.Params.image) | absURL }}">
+
+    <!-- JSON-LD Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Formation professionnelle en outils agentiques IA",
+      "description": "{{ .Site.Params.description }}",
+      "provider": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.author.name }}",
+        "url": "https://alexgirard.com"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts: Archivo + Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#e0533d">
+
+    <!-- LLMs.txt -->
+    <link rel="llms" type="text/plain" href="/llms.txt">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+    <!-- Analytics: none yet — see GAPS.md (property to be decided) -->
+</head>
+<body>
+    <!-- Skip-to-content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    {{ partial "header.html" . }}
+
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Custom JS -->
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
+</body>
+</html>

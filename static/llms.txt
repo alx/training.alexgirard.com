@@ -1,0 +1,19 @@
+# training.alexgirard.com — llms.txt
+
+Formation professionnelle en IA agentique (Alexandre Girard).
+
+## Pages
+- https://training.alexgirard.com/ — accueil : hero (« Formation IA agentique » + « Ce que nous ferons concrètement »), section Modules (M1–M5, durées), section Contact (formulaire Formspree, appel de cadrage 30 min gratuit, réponse < 48 h ouvrées)
+- https://training.alexgirard.com/catalogue/ — contenu détaillé des modules M1–M5, inline (aucune page de niveau inférieur nécessaire) ; /catalogue/mN/ existe aussi (même contenu)
+- /catalogue/#m1 … #m5 — ancres des modules
+- https://training.alexgirard.com/404.html — 404
+
+## Structure du parcours (M1–M5)
+- M1 · Fondamentaux des agents IA (½ j)
+- M2 · Automatiser son quotidien (1 j)
+- M3 · Pipeline autonome : ralph, beads & sous-agents (2 j)
+- M4 · LLM & génération d'images locale sur GPU (1–2 j)
+- M5 · Audit d'agentisation & feuille de route (2–3 j in-situ)
+
+## Contact
+Formulaire sur l'accueil (section « Contact », Formspree). Pas de page de prix publique.

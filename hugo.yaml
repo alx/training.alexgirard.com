@@ -1,0 +1,16 @@
+baseURL: https://training.alexgirard.com/
+languageCode: fr-fr
+title: Formation IA agentique — Alexandre Girard
+
+params:
+  description: "Formation professionnelle et continue en outils agentiques IA : ateliers pratiques, démos live, pipelines qui tournent seuls. Toulouse, intra-entreprise et à distance."
+  keywords: ["formation IA", "agents IA", "IA agentique", "LLM local", "formation professionnelle", "Toulouse"]
+  image: "/android-chrome-512x512.png"
+  author:
+    name: Alexandre Girard
+    email: alex@girard-davila.net
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

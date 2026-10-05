@@ -1,0 +1,7 @@
+.hugo_build.lock
+.packages/
+public/
+CLAUDE.md
+docs/
+
+private/
